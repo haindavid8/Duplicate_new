@@ -5,7 +5,7 @@ function App() {
   const [quote, setQuote] = useState({ quote: '', author: '' });
 
   const fetchQuote = async () => {
-    const res = await fetch('http://localhost:3001/api/quote');
+    const res = await fetch('/api/quote');
     const data = await res.json();
     setQuote(data);
   };
