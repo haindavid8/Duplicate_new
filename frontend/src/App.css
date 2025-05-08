@@ -1,75 +1,58 @@
-/* Reset and base styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .container {
   height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/blue mountains.png') center center / cover no-repeat;
-  position: relative;
-  overflow: hidden;
+  background-color: #f0f4f8;
+  padding: 1rem;
 }
 
-/* Soft transparent overlay: light blur, more image visibility */
-.container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.15); /* more transparent */
-  backdrop-filter: blur(4px);            /* softer blur */
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 0;
-}
-
-/* Quote card */
 .quote-box {
-  position: relative;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.6);  /* semi-transparent white */
-  border-radius: 20px;
   padding: 2.5rem 3rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
   text-align: center;
-  max-width: 700px;
-  width: 90%;
-  backdrop-filter: blur(10px);
+  max-width: 600px;
+  width: 100%;
+  position: relative;
 }
 
-/* Quote text */
+.quote-box::before {
+  content: "❝";
+  font-size: 3rem;
+  color: #90caf9;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
 .quote {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-style: italic;
-  color: #222;
   margin-bottom: 1.2rem;
+  color: #37474f;
 }
 
-/* Author */
 .author {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #007acc;
+  font-size: 1.1rem;
   margin-bottom: 1.8rem;
+  color: #1976d2;
+  font-weight: bold;
 }
 
-/* Button styling */
 button {
   padding: 0.6rem 2rem;
   font-size: 1rem;
-  background: #007acc;
+  background: linear-gradient(90deg, #2196f3, #1e88e5);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-button: hover {
-  background: #005fa3;
+button:hover {
+  background: linear-gradient(90deg, #1e88e5, #1565c0);
+  transform: scale(1.05);
 }
