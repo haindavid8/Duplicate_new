@@ -12,7 +12,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/afe86c3b-4bce-47e8-b8c1-7feb8320a932.png') center center / cover no-repeat;
+  background: url('/landscape.png') center center / cover no-repeat;
   position: relative;
   overflow: hidden;
 }
