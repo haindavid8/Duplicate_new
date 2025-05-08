@@ -1,4 +1,4 @@
-/* Full-page background with image and gradient overlay */
+/* Reset and base styles */
 body, html {
   margin: 0;
   padding: 0;
@@ -8,56 +8,59 @@ body, html {
 
 .container {
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/afe86c3b-4bce-47e8-b8c1-7feb8320a932.png') center/cover no-repeat;
+  background: url('/afe86c3b-4bce-47e8-b8c1-7feb8320a932.png') center center / cover no-repeat;
   position: relative;
+  overflow: hidden;
 }
 
+/* Semi-transparent overlay with blur for glass effect */
 .container::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.6); /* semi-transparent white */
-  backdrop-filter: blur(4px); /* soft blur over background */
-  z-index: 1;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 0;
 }
 
-/* Content stays above overlay */
+/* Glassy centered quote box */
 .quote-box {
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
   padding: 2.5rem 3rem;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   text-align: center;
-  max-width: 600px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 700px;
+  width: 90%;
+  backdrop-filter: blur(10px);
 }
 
-.quote-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
-}
-
+/* Quote text */
 .quote {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   font-style: italic;
-  margin-bottom: 1.2rem;
   color: #222;
+  margin-bottom: 1.2rem;
 }
 
+/* Author name */
 .author {
   font-size: 1.2rem;
   font-weight: bold;
   color: #007acc;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
+/* Quote button */
 button {
-  padding: 0.6rem 1.8rem;
+  padding: 0.6rem 2rem;
   font-size: 1rem;
   background: #007acc;
   color: white;
