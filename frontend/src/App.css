@@ -1,37 +1,55 @@
+/* Modern and clean full-page container */
 .container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Stylish quote box */
 .quote-box {
-  padding: 2rem;
+  padding: 2rem 2.5rem;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
-  max-width: 500px;
+  max-width: 600px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quote-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
 }
 
 .quote {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-style: italic;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  color: #333;
 }
 
 .author {
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #007acc;
+  margin-bottom: 2rem;
 }
 
+/* Modern button */
 button {
-  padding: 0.5rem 1.5rem;
+  padding: 0.6rem 1.8rem;
   font-size: 1rem;
-  background: #0070f3;
+  background: #007acc;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #005fa3;
 }
