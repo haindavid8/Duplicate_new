@@ -1,19 +1,37 @@
-/* Modern and clean full-page container */
+/* Full-page background with image and gradient overlay */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('/afe86c3b-4bce-47e8-b8c1-7feb8320a932.png') center/cover no-repeat;
+  position: relative;
 }
 
-/* Stylish quote box */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6); /* semi-transparent white */
+  backdrop-filter: blur(4px); /* soft blur over background */
+  z-index: 1;
+}
+
+/* Content stays above overlay */
 .quote-box {
-  padding: 2rem 2.5rem;
-  background: white;
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem 3rem;
+  background: rgba(255, 255, 255, 0.75);
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 600px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -21,14 +39,14 @@
 
 .quote-box:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
 }
 
 .quote {
   font-size: 1.75rem;
   font-style: italic;
   margin-bottom: 1.2rem;
-  color: #333;
+  color: #222;
 }
 
 .author {
@@ -38,7 +56,6 @@
   margin-bottom: 2rem;
 }
 
-/* Modern button */
 button {
   padding: 0.6rem 1.8rem;
   font-size: 1rem;
